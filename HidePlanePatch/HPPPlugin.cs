@@ -13,7 +13,7 @@ namespace HidePlanePatch
     {
         // constants
         public const string Guid = "org.HF.plugins.HPP";
-        public const string Version = "1.1.0.0";
+        public const string Version = "0.0.0.0";
         private const string Name = "Hide Plane Patch";
 
         internal static Harmony harmony;
