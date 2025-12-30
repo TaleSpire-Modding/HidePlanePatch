@@ -2,10 +2,10 @@
   "namespace": "HolloFox_TS",
   "name": "Hide_Plane_Patch",
   "description": "Increases the cutbox size for the hide plane",
-  "version_number": "1.2.0",
+  "version_number": "1.2.1",
   "dependencies": [
     "bbepisTaleSpire-BepInExPack-5.4.10",
-    "brcoding-SetInjectionFlagPlugin-3.3.3"
+    "brcoding-SetInjectionFlagPlugin-3.3.4"
   ],
   "website_url": "https://github.com/TaleSpire-Modding/HidePlanePatch"
 }

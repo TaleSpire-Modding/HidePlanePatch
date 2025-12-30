@@ -3,7 +3,6 @@ using BepInEx.Configuration;
 using HarmonyLib;
 using PluginUtilities;
 using BepInEx.Logging;
-using ModdingTales;
 using HidePlanePatch.Patches;
 
 namespace HidePlanePatch
@@ -46,9 +45,6 @@ namespace HidePlanePatch
             DoConfig(Config);
             DoPatching();
             _logger.LogInfo($"{Name} is Active.");
-
-            ModdingUtils.AddPluginToMenuList(this);
-
 
             if (HeightHidePlanePatch.HeightHidePlane == null)
             {

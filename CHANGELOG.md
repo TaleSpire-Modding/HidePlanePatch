@@ -1,3 +1,4 @@
+- 1.2.1: Bump SIF package version
 - 1.2.0: DependencyUnityPlugins is now used and implement logic for unpatching
 - 1.1.1: Fix minor documentation typos/errors and updated link to repository.
 - 1.1.0: Official Repository Release, Implemented deployment pipelines. Updated Documentation.
