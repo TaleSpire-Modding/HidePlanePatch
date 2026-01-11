@@ -1,3 +1,4 @@
+- 1.2.2: migrate to DependencyUnityPlugins<T> to allow enable/disable the plugin without uninstalling it via chainloader
 - 1.2.1: Bump SIF package version
 - 1.2.0: DependencyUnityPlugins is now used and implement logic for unpatching
 - 1.1.1: Fix minor documentation typos/errors and updated link to repository.

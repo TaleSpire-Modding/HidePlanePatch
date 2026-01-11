@@ -9,7 +9,7 @@ namespace HidePlanePatch
 {
     [BepInPlugin(Guid, Name, Version)]
     [BepInDependency(SetInjectionFlag.Guid)]
-    public sealed class HPPPlugin : DependencyUnityPlugin
+    public sealed class HPPPlugin : DependencyUnityPlugin<HPPPlugin>
     {
         // constants
         public const string Guid = "org.HF.plugins.HPP";
@@ -29,11 +29,16 @@ namespace HidePlanePatch
             _logger.LogInfo($"{Name}: Patched.");
         }
 
-        private static void DoConfig(ConfigFile config)
+        protected override void OnSetupConfig(ConfigFile config)
         {
             CullBoxMultiplier = config.Bind("CullBox", "Size", 100f, new ConfigDescription("", null, new ConfigurationAttributes
             {
-                CallbackAction = (object o) => { SetHHPSize(); },
+                CallbackAction = (object o) => {
+                    if (Enabled)
+                    {
+                        SetHHPSize();
+                    } 
+                },
                 DispName = "Cull Box Size"
             }));
         }
@@ -42,7 +47,6 @@ namespace HidePlanePatch
         {
             _logger = Logger;
             
-            DoConfig(Config);
             DoPatching();
             _logger.LogInfo($"{Name} is Active.");
 
@@ -71,7 +75,7 @@ namespace HidePlanePatch
             }
 
             // Unpatch Harmony Patches
-            harmony.UnpatchSelf();
+            harmony?.UnpatchSelf();
 
             // unbind static variables
             CullBoxMultiplier = null;
